@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const CategoryIcons = {
-  "Web Development": (
+  "Desarrollador Web": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -11,7 +11,7 @@ const CategoryIcons = {
       <path d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 11H4V19H20V11ZM20 5H4V9H20V5ZM11 6V8H9V6H11ZM7 6V8H5V6H7Z"></path>
     </svg>
   ),
-  "Mobile Development": (
+  "Desarrollador Móvil": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -21,7 +21,7 @@ const CategoryIcons = {
       <path d="M7 4V20H17V4H7ZM6 2H18C18.5523 2 19 2.44772 19 3V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2ZM12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17Z"></path>
     </svg>
   ),
-  "UI/UX Design & Prototyping": (
+  "Diseño UI/UX y Prototipado": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -31,25 +31,41 @@ const CategoryIcons = {
       <path d="M5.7646 7.99998L5.46944 7.26944C5.26255 6.75737 5.50995 6.17454 6.02202 5.96765L15.2939 2.22158C15.8059 2.01469 16.3888 2.26209 16.5956 2.77416L22.2147 16.6819C22.4216 17.194 22.1742 17.7768 21.6622 17.9837L12.3903 21.7298C11.8783 21.9367 11.2954 21.6893 11.0885 21.1772L11.0002 20.9586V21H7.00021C6.44792 21 6.00021 20.5523 6.00021 20V19.7303L2.65056 18.377C2.13849 18.1701 1.89109 17.5873 2.09798 17.0752L5.7646 7.99998ZM8.00021 19H10.2089L8.00021 13.5333V19ZM6.00021 12.7558L4.32696 16.8972L6.00021 17.6084V12.7558ZM7.69842 7.44741L12.5683 19.5008L19.9858 16.5039L15.1159 4.45055L7.69842 7.44741ZM10.6766 9.47974C10.1645 9.68663 9.5817 9.43924 9.37481 8.92717C9.16792 8.4151 9.41532 7.83227 9.92739 7.62538C10.4395 7.41849 11.0223 7.66588 11.2292 8.17795C11.4361 8.69002 11.1887 9.27286 10.6766 9.47974Z"></path>
     </svg>
   ),
+"Redes de Computadoras": (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-6 h-6 text-[var(--sec)] opacity-70"
+  >
+    <path d="M12 2C13.1046 2 14 2.89543 14 4C14 4.74057 13.5978 5.3876 13 5.73244V8.26756C13.5978 8.6124 14 9.25943 14 10C14 11.1046 13.1046 12 12 12C10.8954 12 10 11.1046 10 10C10 9.25943 10.4022 8.6124 11 8.26756V5.73244C10.4022 5.3876 10 4.74057 10 4C10 2.89543 10.8954 2 12 2ZM4 12C5.10457 12 6 12.8954 6 14C6 14.7406 5.5978 15.3876 5 15.7324V18.2676C5.5978 18.6124 6 19.2594 6 20C6 21.1046 5.10457 22 4 22C2.89543 22 2 21.1046 2 20C2 19.2594 2.4022 18.6124 3 18.2676V15.7324C2.4022 15.3876 2 14.7406 2 14C2 12.8954 2.89543 12 4 12ZM20 12C21.1046 12 22 12.8954 22 14C22 14.7406 21.5978 15.3876 21 15.7324V18.2676C21.5978 18.6124 22 19.2594 22 20C22 21.1046 21.1046 22 20 22C18.8954 22 18 21.1046 18 20C18 19.2594 18.4022 18.6124 19 18.2676V15.7324C18.4022 15.3876 18 14.7406 18 14C18 12.8954 18.8954 12 20 12Z" />
+  </svg>
+),
+
 };
 
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "Web Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Portfolio websites",
+    "Desarrollador Web": [
+      "Aplicaciones de una sola página (SPA)",
+      "Landing Pages y sitios web empresariales",
+    "Sitios web de portafolio",
     ],
-    "Mobile Development": [
-      "Mobile-friendly web apps",
-      "React Native mobile apps",
+    "Desarrollador Móvil": [
+      "Aplicaciones web adaptadas a móviles",
+      "Aplicaciones móviles con React Native"
     ],
-    "UI/UX Design & Prototyping": [
-      "UI design with Figma & Canva",
-      "UX research & improvements",
-      "Prototyping for websites & mobile apps",
+    "Diseño UI/UX y Prototipado": [
+      "Diseño de interfaces con Figma y Canva",
+    "Investigación UX y mejoras en la experiencia de usuario",
+    "Prototipos para sitios web y apps móviles"
+    ],
+    "Redes de Computadoras": [
+      "Configuración de redes",
+      "Seguridad en redes",
+      "Monitoreo y gestión de redes",
     ],
   };
 
@@ -60,7 +76,7 @@ const SkillsList = () => {
   return (
     <div className="text-left pt-3 md:pt-9">
       <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
-        What I do?
+        Mis Habilidades
       </h3>
       <ul className="space-y-4 mt-4 text-lg">
         {Object.entries(skills).map(([category, items]) => (
